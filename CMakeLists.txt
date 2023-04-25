@@ -22,10 +22,10 @@ set(YOSYS_LIBS -lstdc++ -lm -lrt -lreadline -lffi -ldl -lz -ltcl8.6 -ltclstub8.6
 # Stuff required for LLVM
 
 # Look for existing LLVM installation
-#find_package (LLVM 14 REQUIRED)
+find_package (LLVM 14 REQUIRED)
 
 # Force use of Doug's LLVM build
-find_package (LLVM 14 REQUIRED PATHS /home/dlbraun/.local/ NO_DEFAULT_PATH)
+# find_package (LLVM 14 REQUIRED PATHS /home/dlbraun/.local/ NO_DEFAULT_PATH)
 
 include_directories(${LLVM_INCLUDE_DIRS})
 add_definitions(${LLVM_DEFINITIONS})
@@ -33,7 +33,8 @@ llvm_map_components_to_libnames(llvm_libs support core irreader)
 
 
 # Stuff required by our existing func_extract code
-set(AUTO_GEN_ILA_DIR /home/dlbraun/autoGenILA/src)
+# set(AUTO_GEN_ILA_DIR /home/dlbraun/autoGenILA/src)
+set(AUTO_GEN_ILA_DIR /home/ys3146/autoGenILA/src)
 # Include .h files like this: #include live_analysis/src/global_data.h
 include_directories(${AUTO_GEN_ILA_DIR})
 link_directories(${AUTO_GEN_ILA_DIR}/live_analysis/build)
