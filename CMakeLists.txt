@@ -6,7 +6,8 @@ project (yosys_func_extract VERSION 1.0 DESCRIPTION "yosys extension for ILA upd
 set(CMAKE_CXX_STANDARD 17)
 
 # Stuff required for Yosys
-set(YOSYS_DIR /home/dlbraun/.local/share/yosys)
+# set(YOSYS_DIR /home/dlbraun/.local/share/yosys)
+set(YOSYS_DIR /home/ys3146/.local/share/yosys)
 include_directories(${YOSYS_DIR}/include)
 add_compile_options(-Wall -Wextra -ggdb -MD -MP -std=c++11 -Os -rdynamic)
 add_compile_definitions(
